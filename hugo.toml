@@ -22,8 +22,8 @@ ShowToc = true
 
 [params.profileMode]
 enabled = true
-title = "Jie Liu"
-subtitle = "28届 | Software Engineering | Game Client - Agent - C++ - LeetCode"
+title = "JQ Liu"
+subtitle = "Game Client | Agent | C++ | LeetCode"
 
 [[params.profileMode.buttons]]
 name = "Posts"
