@@ -1,49 +1,56 @@
 baseURL = 'https://jqliu-02.github.io/'
 languageCode = 'zh-cn'
-title = 'JQLiu-02 Tech Portfolio'
+title = 'Jie Liu | GameDev - Agent - Leetcode'
 theme = 'PaperMod'
 
+pagination.pagerSize = 10
+enableRobotsTXT = true
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+
 [params]
+author = "Jie Liu"
+defaultTheme = "auto"
+
 ShowReadingTime = true
-ShowShareButtons = true
+ShowCodeCopyButtons = true
 ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowToc = true
+
 mainSections = ["posts", "projects"]
 
+homeInfoParams.Title = "Hello"
+homeInfoParams.Content = """
+研一 CS Student
+
+Game Client Development
+
+Agent Learning
+
+Leetcode Practice
+"""
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/JQLiu-02"
+
 [[menu.main]]
-identifier = "posts"
-name = "Posts"
-url = "/posts/"
+name = "Projects"
+url = "/projects/"
 weight = 10
 
 [[menu.main]]
-identifier = "agent"
-name = "Agent"
-url = "/posts/agent/"
+name = "Posts"
+url = "/posts/"
 weight = 20
 
 [[menu.main]]
-identifier = "ue5"
-name = "UE5"
-url = "/posts/ue5/"
-weight = 30
-
-[[menu.main]]
-identifier = "leetcode"
-name = "LeetCode"
-url = "/posts/leetcode/"
-weight = 40
-
-[[menu.main]]
-identifier = "projects"
-name = "Projects"
-url = "/projects/"
-weight = 50
-
-[[menu.main]]
-identifier = "about"
 name = "About"
-url = "/aboutme/"
-weight = 60
+url = "/about/"
+weight = 30
 
 [caches]
   [caches.images]

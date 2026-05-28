@@ -1,10 +1,10 @@
 ---
-title: "About Me"
+title: "About"
 date: 2026-05-28
 draft: false
 ---
 
-# About Me
+# About
 
 我是 TJU 研一学生，方向是软件工程。
 
