@@ -1,6 +1,6 @@
 baseURL = 'https://jqliu-02.github.io/'
 languageCode = 'zh-cn'
-title = 'Jie Liu | GameDev - Agent - Leetcode'
+title = 'JQ Liu | GameDev - Agent - Leetcode'
 theme = 'PaperMod'
 
 pagination.pagerSize = 10
@@ -11,7 +11,7 @@ tag = "tags"
 category = "categories"
 
 [params]
-author = "Jie Liu"
+author = "JQ Liu"
 defaultTheme = "auto"
 
 ShowReadingTime = true
@@ -23,15 +23,16 @@ ShowToc = true
 [params.profileMode]
 enabled = true
 title = "Jie Liu"
-subtitle = "TJU 研一 | Software Engineering | Game Client - Agent - LeetCode"
+subtitle = "研一 | Software Engineering | Game Client - Agent - LeetCode"
+
+[[params.profileMode.buttons]]
+name = "Posts"
+url = "/posts/"
 
 [[params.profileMode.buttons]]
 name = "Projects"
 url = "/projects/"
 
-[[params.profileMode.buttons]]
-name = "Posts"
-url = "/posts/"
 
 [[params.profileMode.buttons]]
 name = "About"
