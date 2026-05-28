@@ -20,18 +20,22 @@ ShowPostNavLinks = true
 ShowBreadCrumbs = true
 ShowToc = true
 
-mainSections = ["posts", "projects"]
+[params.profileMode]
+enabled = true
+title = "Jie Liu"
+subtitle = "TJU 研一 | Software Engineering | Game Client - Agent - LeetCode"
 
-homeInfoParams.Title = "Hello"
-homeInfoParams.Content = """
-研一 CS Student
+[[params.profileMode.buttons]]
+name = "Projects"
+url = "/projects/"
 
-Game Client Development
+[[params.profileMode.buttons]]
+name = "Posts"
+url = "/posts/"
 
-Agent Learning
-
-Leetcode Practice
-"""
+[[params.profileMode.buttons]]
+name = "About"
+url = "/about/"
 
 [[params.socialIcons]]
 name = "github"
