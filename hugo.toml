@@ -1,0 +1,9 @@
+baseURL = 'https://JQLiu-02.github.io/'
+languageCode = 'zh-cn'
+title = 'JQLiu-02 Tech Portfolio'
+theme = 'PaperMod'
+
+[params]
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
