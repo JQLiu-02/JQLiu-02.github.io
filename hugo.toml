@@ -7,6 +7,43 @@ theme = 'PaperMod'
 ShowReadingTime = true
 ShowShareButtons = true
 ShowPostNavLinks = true
+mainSections = ["posts", "projects"]
+
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "agent"
+name = "Agent"
+url = "/posts/agent/"
+weight = 20
+
+[[menu.main]]
+identifier = "ue5"
+name = "UE5"
+url = "/posts/ue5/"
+weight = 30
+
+[[menu.main]]
+identifier = "leetcode"
+name = "LeetCode"
+url = "/posts/leetcode/"
+weight = 40
+
+[[menu.main]]
+identifier = "projects"
+name = "Projects"
+url = "/projects/"
+weight = 50
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/aboutme/"
+weight = 60
 
 [caches]
   [caches.images]
