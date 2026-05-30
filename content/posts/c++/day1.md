@@ -222,3 +222,159 @@ operator>>
 * `>>` 默认跳过前导空白字符
 * 一次输入可支持多次提取
 * 提取失败会使输入流进入错误状态
+
+## 头文件卫士、声明与定义
+
+### 头文件卫士（Header Guard）
+
+头文件卫士用于防止**同一个翻译单元（单个 `.cpp` 编译结果）**重复包含同一个头文件（本质是防止因为嵌套include引起的重复定义）。
+
+常见写法：
+
+a.h
+```cpp
+#ifndef A_H
+#define A_H
+
+class A{};
+
+#endif
+```
+
+b.h
+```cpp
+#include "a.h"
+```
+
+main.cpp
+```cpp
+#include "a.h"
+#include "b.h"
+```
+没有 guard 时：
+
+main.cpp
+ ├─ a.h
+ └─ b.h
+     └─ a.h
+
+a.h 被展开两次。
+
+注意：**Header Guard 不能阻止多个 `.cpp` 文件同时包含同一个头文件。**
+
+因为：
+
+```text
+main.cpp  → 独立预处理/编译
+other.cpp → 独立预处理/编译
+```
+
+每个 `.cpp` 都拥有自己的预处理环境，宏定义状态不会共享。
+
+---
+
+### 声明（Declaration）与定义（Definition）
+
+#### 声明：告诉编译器“某东西存在”
+
+例如：
+
+```cpp
+int add(int,int);
+```
+
+这是**函数声明**。
+
+声明可以重复出现：
+
+* 单个 `.cpp` 中允许重复声明（前提一致）
+* 多个 `.cpp` 中允许重复声明
+
+工程中通常：
+
+```text
+add.h
+ └── 放声明
+
+main.cpp
+other.cpp
+ └── include add.h
+```
+
+这种写法完全正常。
+
+---
+
+#### 定义：真正创建实体/实现代码
+
+例如：
+
+```cpp
+int add(int a,int b)
+{
+    return a+b;
+}
+```
+
+这是**函数定义**。
+
+普通定义遵循 **ODR（One Definition Rule）**：
+
+> 一个工程中通常只能有一个定义。
+
+错误示例：
+
+```cpp
+// main.cpp
+int x=5;
+
+// other.cpp
+int x=10;
+```
+
+编译可能通过，但链接时报错：
+
+```text
+multiple definition
+```
+
+---
+
+### 工程中的标准组织方式
+
+通常采用：
+
+```text
+xxx.h   → 声明
+
+xxx.cpp → 定义/实现
+```
+
+示例：
+
+```cpp
+// add.h
+int add(int,int);
+```
+
+```cpp
+// add.cpp
+#include "add.h"
+
+int add(int a,int b)
+{
+    return a+b;
+}
+```
+
+```cpp
+// main.cpp
+#include "add.h"
+```
+
+这样：
+
+* 所有文件都能看到声明
+* 实现只有一份
+* 满足 ODR 规则
+* 方便大型工程组织代码
